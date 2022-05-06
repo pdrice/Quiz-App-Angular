@@ -24,7 +24,7 @@ randomize:number;
 
   ngOnInit(): void {
     this.quizzes = this.quizService.getQuiz();
-    this.randomize = Math.floor(Math.random()* this.quizzes.length)
+    
   }
 
   onAnswer(correct:boolean){
@@ -33,7 +33,7 @@ randomize:number;
     
     setTimeout(()=>{
       this.currentQuiz++;
-      this.randomize = Math.floor(Math.random()* this.quizzes.length)
+     
       this.answerSelected =false;
     }, 800)
     

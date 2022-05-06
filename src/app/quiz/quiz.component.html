@@ -3,7 +3,7 @@
         <div class="col-sm-8 offset-2">
             <div *ngIf="currentQuiz < quizzes.length">
                 <p class="text-center">{{currentQuiz + 1}} of  {{quizzes.length}}</p>
-                <h1>{{quizzes[randomize].question}}</h1>
+                <h1>{{quizzes[currentQuiz].question}}</h1>
                 <ul class="list-group" *ngFor="let quiz of quizzes[currentQuiz].answer">
                     <label>
                     <li class="list-group-item" appBackground [correctAnswer]="quiz.correct">
@@ -18,7 +18,7 @@
             <div class="font-weight-bold text-center" *ngIf="result">
                 <hr>
                 Correct Answer: {{correctAnswer}} | Incorrect Answer: {{incorrectAnswer}}
-                <br> You got a {{correctAnswer/quizzes.length *100}}% so far
+                <br> You got a {{correctAnswer/quizzes.length *100 | number:'1.0-1'}}% so far
            </div> 
         </div>
     </div>
